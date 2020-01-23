@@ -14,7 +14,7 @@ class CreateModelosTable extends Migration
     public function up()
     {
         Schema::create('modelos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id')->unsigned();
             $table->boolean('situacao')->nullable();
             $table->string('nome')->nullable();
             $table->timestamps();

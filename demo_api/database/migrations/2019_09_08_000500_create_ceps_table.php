@@ -14,7 +14,7 @@ class CreateCepsTable extends Migration
     public function up()
     {
         Schema::create('ceps', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id')->unsigned();
             $table->string('cep')->nullable();
             $table->boolean('situacao')->nullable();
             $table->integer('bairro_id')->unsigned()->nullable();

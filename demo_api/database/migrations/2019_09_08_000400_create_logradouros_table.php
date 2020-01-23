@@ -14,7 +14,7 @@ class CreateLogradourosTable extends Migration
     public function up()
     {
         Schema::create('logradouros', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id')->unsigned();
             $table->string('nome')->nullable();
             $table->boolean('situacao')->nullable();
             $table->timestamps();

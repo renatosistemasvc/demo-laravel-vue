@@ -14,7 +14,7 @@ class CreateBairrosTable extends Migration
     public function up()
     {
         Schema::create('bairros', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id')->unsigned();
             $table->string('nome')->nullable();
             $table->boolean('situacao')->nullable();
             $table->timestamps();

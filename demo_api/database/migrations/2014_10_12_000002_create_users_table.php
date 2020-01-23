@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id')->unsigned();
             $table->string('name');
             $table->string('imagem')->nullable();
             $table->string('usuario')->unique();
@@ -34,7 +34,6 @@ class CreateUsersTable extends Migration
             'situacao' => true
         ]);
 
-        DB::select(DB::raw("SELECT setval('users_id_seq', (SELECT MAX(id) from users))"));
     }
 
     /**
